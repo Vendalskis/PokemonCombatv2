@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 5
-  currentHP: 15
-  maxHP: 15
+  currentHP: 20
+  maxHP: 20
   attackLevel: 4
   currentName: Bulbasaur
 --- !u!212 &212323837134007132

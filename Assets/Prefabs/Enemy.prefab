@@ -82,9 +82,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 1
-  currentHP: 5
-  maxHP: 5
-  attackLevel: 15
+  currentHP: 15
+  maxHP: 15
+  attackLevel: 2
   currentName: Pikachu
 --- !u!212 &212330447861294754
 SpriteRenderer:

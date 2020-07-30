@@ -15,9 +15,32 @@ public class SoundManager : MonoBehaviour {
         audioSrc = GetComponent<AudioSource>();
 
     }
+
+    // Update is called once per frame
+    void Update() {
+    }
+     
+    public static void PlaySound(string clip)
+    {
+        switch (clip)
+        {
+            case "Hit_01":
+                audioSrc.PlayOneShot(Hit_01);
+                break;
+            case "Menu_Navigate_03":
+                audioSrc.PlayOneShot(Menu_Navigate_03);
+                break;
+
+
+
+
+        }
+
+
+
+
+        }
+    
+        
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

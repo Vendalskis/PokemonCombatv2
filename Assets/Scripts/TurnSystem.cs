@@ -57,14 +57,15 @@ public class TurnSystem : MonoBehaviour {
     {
         bool isDead = enemyPoke.TakeDamage(playerPoke.attackLevel);
         //Damage the enemy
-                //need to play sound of player taking damage
+                
                 //need play animation of player taking damage, red flash or something or fade in and out of sprite.
         EnemyBar.SetHP(enemyPoke.currentHP);
         CombatText.text = "The move hits!";
-
+       
         yield return new WaitForSeconds(2f);
+        //SoundManager.PlaySound("Hit_01");
         //if enemy is at 0 or less than 0, win state, run end battle. 
-        if(isDead)
+        if (isDead)
         {
             state = TurnState.WON;
             EndBattle();
@@ -83,8 +84,8 @@ public class TurnSystem : MonoBehaviour {
 
         yield return new WaitForSeconds(1f);
 
-        
-        //play sound of player taking damage
+
+        //SoundManager.PlaySound("Hit_01");
         //play animation of player taking damage, red flash or something or fade in and out of sprite.
 
         bool isDead = playerPoke.TakeDamage(enemyPoke.attackLevel);
@@ -115,21 +116,21 @@ public class TurnSystem : MonoBehaviour {
 
     IEnumerator PlayerPokemonScreen()
     {
-        CombatText.text = "Swapping to other pokemon";
+        CombatText.text = "You have no other pokemon!";
         //enable new canvas and disable old canvas
         //play running away noise
         yield return new WaitForSeconds(2f);
-        state = TurnState.POKEMON;
+        state = TurnState.PLAYERTURN;
 
     }
 
     IEnumerator PlayerBag()
     {
         //swap to bag, give delay, change canvas to a new bag UI.
-        CombatText.text = "Swapping to your bag";
+        CombatText.text = "You have no items in your bag!";
         //enable the new canvas for player bag and disable old canvas
         yield return new WaitForSeconds(2f);
-        state = TurnState.BAG;
+        state = TurnState.PLAYERTURN;
     }
 
     void EndBattle()
@@ -166,6 +167,7 @@ public class TurnSystem : MonoBehaviour {
 
     public void OnRunButton()
     {
+        //SoundManager.PlaySound("Menu_Navigate_03");
         //if using run button, do the coroutine
         if (state != TurnState.PLAYERTURN)
             return;
@@ -175,6 +177,7 @@ public class TurnSystem : MonoBehaviour {
 
      public void OnBagButton()
     {
+        //SoundManager.PlaySound("Menu_Navigate_03");
         //if using bag button do coroutine
         if (state != TurnState.PLAYERTURN)
             return;
@@ -184,6 +187,7 @@ public class TurnSystem : MonoBehaviour {
 
     public void OnPokemonButton()
     {
+        //SoundManager.PlaySound("Menu_Navigate_03");
         //if using pokemon button, do coroutine
         if (state != TurnState.PLAYERTURN)
             return;
@@ -194,7 +198,7 @@ public class TurnSystem : MonoBehaviour {
 
     public void OnFightButton()
     {
-        
-        
+        //SoundManager.PlaySound("Menu_Navigate_03");
+
     }
 }

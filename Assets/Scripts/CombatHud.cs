@@ -16,8 +16,7 @@ public class CombatHud : MonoBehaviour {
         levelText.text = "Lvl " + stats.currentLevel;
         hpSlider.maxValue = stats.maxHP;
         hpSlider.value = stats.currentHP;
-        //hpText.value = stats.currentHP;
-        //maxHPText.text = stats.maxHP;
+       
     }
 
     public void SetHP(int hp)
